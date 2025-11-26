@@ -1,0 +1,22 @@
+
+@use '../../../../theme/_variables.scss' as color;
+
+.input {
+  &__label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    color: color.$black;
+    border: 1px solid color.$atlantis;
+    border-radius: 0.25rem;
+
+    &::placeholder {
+      font-size: 0.75rem;
+    }
+  }
+}

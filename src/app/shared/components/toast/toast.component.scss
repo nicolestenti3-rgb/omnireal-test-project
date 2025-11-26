@@ -1,0 +1,76 @@
+
+@use '../../../../theme/_variables.scss' as color;
+
+.toast {
+  min-width: 19rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+  background: color.$white;
+  animation: slideIn 0.3s ease-out;
+
+  &--success {
+    border-left: 0.25rem solid color.$mountain-meadow;
+  }
+
+  &--error {
+    border-left: 0.25rem solid color.$flamingo;
+  }
+
+  &--warning {
+    border-left: 0.25rem solid color.$buttercup;
+  }
+
+  &--info {
+    border-left: 0.25rem solid color.$dodger-blue;
+  }
+
+  &__container {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 10000;
+  }
+
+  &__message {
+    flex: 1;
+    color: color.$black;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  &__close {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 1.125rem;
+    color: color.$black;
+    transition: color 0.2s;
+    cursor: pointer;
+
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

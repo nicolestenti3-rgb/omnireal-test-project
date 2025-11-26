@@ -1,0 +1,13 @@
+<div class="input">
+	<div class="input__wrapper">
+		<label [for]="inputId" class="input__label">{{label}}</label>
+		 <input 
+      [type]="type" 
+      [id]="inputId" 
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="isDisabled"
+      (input)="onInput($event)"
+    />
+	</div>
+</div>

@@ -1,0 +1,26 @@
+
+@use '../../../../theme/_variables.scss' as color;
+
+.button {
+  button {
+    width: 100%;
+    min-width: 12.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-family: "BasisGrotesqueArabicProMedium";
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid color.$black;
+    background-color: color.$atlantis;
+    color: color.$white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+
+		&:disabled {
+			background-color: color.$alto;
+		}
+  }
+}
