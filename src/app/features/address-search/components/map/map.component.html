@@ -1,0 +1,24 @@
+<div class="map">
+	<div class="map__coordinates">
+		<div class="map__info">
+			<label>Latitude</label>
+			<span>{{latitude ? latitude : '-'}}</span>
+		</div>
+		<div class="map__info">
+			<label>Longitude</label>
+			<span>{{latitude ? longitude : '-'}}</span>
+		</div>
+		<div class="map__info">
+			<label>Full Address</label>
+			<span>{{address ? address : '-'}}</span>
+		</div>
+	</div>
+	<div class="map__container">
+		@if(!latitude || !longitude) {
+		<div class="map__placeholder" [style.display]="(latitude && longitude) ? 'none' : 'flex'">
+			<p>The map will appear here after you search for an address</p>
+		</div>
+		}
+		<div id="map" class="map" [style.display]="(latitude && longitude) ? 'block' : 'none'"></div>
+	</div>
+</div>

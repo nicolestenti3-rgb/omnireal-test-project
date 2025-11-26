@@ -1,0 +1,14 @@
+<div class="form">
+	<form [formGroup]="addressFormGroup">
+		<app-input class="form__address" formControlName="address" label="Address" placeholder="Ex. Via Roma" inputId="address"></app-input>
+		<app-input   class="form__address-number" formControlName="addressNumber" label="Address number" placeholder="Ex: 21"
+			inputId="addressNumber"></app-input>
+		<app-input class="form__input" formControlName="postalCode" label="Postal code" placeholder="Ex: 00100"
+			inputId="postalCode"></app-input>
+		<app-input class="form__input" formControlName="city" label="City" placeholder="Ex: Rome" inputId="city"></app-input>
+		<app-input class="form__input" formControlName="country" label="Country" placeholder="Ex: Italy" inputId="country"></app-input>
+	</form>
+	<div class="form__button">
+		<app-button text="Submit" [isDisabled]="addressFormGroup.invalid" (buttonSubmitted)="handleSubmitForm()"></app-button>
+	</div>
+</div>

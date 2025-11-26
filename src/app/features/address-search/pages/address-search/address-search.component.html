@@ -1,0 +1,33 @@
+<div class="address-search">
+	<h1 class="address-search__title">Omnireal GeoWeather</h1>
+	<p>Enter a city, ZIP code, or valid address below for accurate, up-to-date weather results.</p>
+	<div class="address-search__container">
+		<div class="address-search__form">
+			<app-form (coordinatesFound)="handleCoordinates($event)"></app-form>
+		</div>
+		<div class="address-search__map">
+			<app-map [latitude]="latitude" [longitude]="longitude" [address]="address"></app-map>
+		</div>
+		<div class="address-search__graphics">
+			@if(weatherData) {
+			<div class="address-search__graphics-title">
+				<h2>Graphics</h2>
+
+				<app-button text="Download Data" (buttonSubmitted)="downloadWeatherData()"></app-button>
+			</div>
+
+			<div class="address-search__graphics-container">
+				<div class="highcharts-figure">
+					<highcharts-chart [highcharts]="Highcharts" [options]="chartOptionsDaily">
+					</highcharts-chart>
+				</div>
+	
+				<div class="highcharts-figure">
+					<highcharts-chart [highcharts]="Highcharts" [options]="chartOptionsHourly">
+					</highcharts-chart>
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+</div>

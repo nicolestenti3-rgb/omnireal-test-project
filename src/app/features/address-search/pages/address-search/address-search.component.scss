@@ -1,0 +1,55 @@
+.address-search {
+  &__title {
+    margin-bottom: 0.5rem;
+    font-family: "BasisGrotesqueArabicProMedium", sans-serif;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    grid-column: 1 / 3;
+    margin: auto;
+  }
+
+  &__map {
+    grid-column: 3 / 6;
+  }
+
+  &__graphics {
+    grid-column: 1 / 6;
+
+    h2 {
+      font-family: "BasisGrotesqueArabicProMedium", sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__graphics-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__graphics-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    highcharts-chart {
+      display: block;
+      width: 100%;
+    }
+  }
+}
